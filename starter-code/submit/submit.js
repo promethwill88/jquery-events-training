@@ -6,11 +6,14 @@ $(document).ready(function(){
 
   $("#time").text( Date.now() );
 
-  // Select form. On submit, run function preventSubmit
-  //$("form").on("submit", preventSubmit);
-  // function with parameter event, runs event.PreventDefault which stops submits
-  //function preventSubmit(event){
-  //	event.preventDefault();
-  //}
+  // Select form elements (include  both forms). On submit, run function preventSubmit
+  $('form').on('submit', preventSubmit);
+  // Function with parameter event, runs event.PreventDefault which stops submits
+  function preventSubmit(event){
+  	event.preventDefault();
+  	// Add rick roll youtube embed once any of the two are submitted
+  	$('body').append(rick_roll_youtube_embed_code);
+  }
+
 
 })
